@@ -1,0 +1,22 @@
+CREATE TABLE search_content (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    link VARCHAR(255)
+);
+
+
+
+INSERT INTO search_content (title, link)
+SELECT
+    CASE FLOOR(RAND() * 4) + 1
+        WHEN 1 THEN 'GOOGLE'
+        WHEN 2 THEN 'YAHOO'
+        WHEN 3 THEN 'BING'
+        WHEN 4 THEN 'FACEBOOK'
+    END AS title,
+    CONCAT('https://example.com/', RAND()) AS link
+FROM
+    (SELECT n FROM (SELECT 1 AS n UNION SELECT 2 UNION SELECT 3 UNION SELECT 4) AS nums) AS a
+    CROSS JOIN
+    (SELECT n FROM (SELECT 1 AS n UNION SELECT 2 UNION SELECT 3 UNION SELECT 4) AS nums) AS b
+LIMIT 20;

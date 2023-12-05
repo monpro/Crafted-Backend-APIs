@@ -29,7 +29,7 @@ public class SearchControllerTest {
     public void testSearch() {
 
         // Mocking the searchService
-        List<SearchResultDTO> mockResults = Collections.singletonList(SearchResultDTO.builder().build());
+        List<SearchResultDTO> mockResults = Collections.singletonList(new SearchResultDTO(1L, "title", "link"));
         when(searchService.performSearch(any()))
                 .thenReturn(mockResults);
 

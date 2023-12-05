@@ -1,12 +1,13 @@
 package com.monpro.apis.dto;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@Builder
+@AllArgsConstructor
 public class SearchResultDTO {
     private long id;
-    private String queryTitle;
+
+    private String title;
     private String link;
 }

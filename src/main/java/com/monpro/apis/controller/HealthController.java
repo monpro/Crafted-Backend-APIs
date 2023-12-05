@@ -1,4 +1,4 @@
-package com.monpro.apis.health;
+package com.monpro.apis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
